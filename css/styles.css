@@ -270,54 +270,47 @@ nav.nav-over-hero .nav-links a:hover {
 }
 
 /* =============================================
-   HERO (clean, Sherlaine-style) + Parallax
+   HERO + Vertical scroll-through parallax
    ============================================= */
 .hero-wrap {
     position: relative;
-    min-height: 85vh;
 }
 
-.hero-parallax {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-}
-
-.parallax-layer {
-    position: absolute;
-    inset: -15%;
+/* Each image is a full-viewport section; scroll down to "meet" the next */
+.parallax-scroll-section {
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    will-change: transform;
+    position: relative;
+    background-attachment: fixed;
 }
 
-.parallax-layer--back {
-    z-index: 0;
+.parallax-scroll-section--1 {
     background-color: #0a1628;
     background-image: url('../assets/3408105.jpg');
-    opacity: 0.92;
 }
 
-.parallax-layer--mid {
-    z-index: 1;
+.parallax-scroll-section--2 {
     background-color: #0d1f3c;
     background-image: url('../assets/3409297.jpg');
-    opacity: 0.88;
 }
 
-.parallax-layer--front {
-    z-index: 2;
+.parallax-scroll-section--3 {
     background-color: #0f2847;
     background-image: url('../assets/rm314-adj-02.jpg');
-    opacity: 0.85;
 }
 
-.hero-wrap .hero {
+@media (max-width: 1024px) {
+    .parallax-scroll-section {
+        background-attachment: scroll;
+    }
+}
+
+.parallax-scroll-section .hero {
     position: relative;
     z-index: 1;
-    min-height: 85vh;
+    min-height: 100vh;
 }
 
 .hero-wrap .hero .section-eyebrow,

@@ -35,7 +35,8 @@ function initNavScroll() {
     if (!nav) return;
 
     function updateNav() {
-        const overDarkHero = heroWrap && window.scrollY < window.innerHeight * 0.75;
+        const parallaxHeight = heroWrap ? heroWrap.offsetHeight : 0;
+        const overDarkHero = heroWrap && window.scrollY < parallaxHeight - 50;
         if (overDarkHero) {
             nav.classList.add('nav-over-hero');
             nav.style.background = 'transparent';
@@ -49,52 +50,9 @@ function initNavScroll() {
     updateNav();
 }
 
-/* --- Homepage Hero: Multi-Layer Parallax --- */
+/* --- Homepage: vertical parallax (scroll-through sections, no JS needed) --- */
 function initHeroParallax() {
-    const container = document.querySelector('.hero-parallax');
-    const layers = document.querySelectorAll('.parallax-layer');
-    if (!container || !layers.length) return;
-
-    let ticking = false;
-    let scrollY = 0;
-    let mouseX = 0;
-    let mouseY = 0;
-
-    function updateParallax() {
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
-        const mouseFactor = 0.02;
-
-        layers.forEach((layer) => {
-            const speed = parseFloat(layer.dataset.speed) || 0.2;
-            const scrollOffset = scrollY * speed * 0.5;
-            const mouseOffsetX = (mouseX - centerX) * mouseFactor * (speed * 20);
-            const mouseOffsetY = (mouseY - centerY) * mouseFactor * (speed * 20);
-
-            layer.style.transform = `translate3d(${mouseOffsetX}px, ${scrollOffset + mouseOffsetY}px, 0)`;
-        });
-        ticking = false;
-    }
-
-    function requestTick() {
-        if (!ticking) {
-            ticking = true;
-            requestAnimationFrame(updateParallax);
-        }
-    }
-
-    window.addEventListener('scroll', () => {
-        scrollY = window.scrollY;
-        requestTick();
-    }, { passive: true });
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        requestTick();
-    }, { passive: true });
-
-    updateParallax();
+    /* Vertical scroll-through is handled by CSS (parallax-scroll-section + background-attachment: fixed) */
 }
 
 /* --- Intersection Observer (Fade Ins) --- */
