@@ -296,21 +296,21 @@ nav.nav-over-hero .nav-links a:hover {
 .parallax-layer--back {
     z-index: 0;
     background-color: #0a1628;
-    background-image: url('../assets/3408105-953bb3b5-3365-421c-b376-b9070cddb129.jpg');
+    background-image: url('../assets/3408105.jpg');
     opacity: 0.92;
 }
 
 .parallax-layer--mid {
     z-index: 1;
     background-color: #0d1f3c;
-    background-image: url('../assets/3409297-38858e7b-a891-45b2-9227-4d8731a6570d.jpg');
+    background-image: url('../assets/3409297.jpg');
     opacity: 0.88;
 }
 
 .parallax-layer--front {
     z-index: 2;
     background-color: #0f2847;
-    background-image: url('../assets/rm314-adj-02-d48323b5-8df8-4518-8d0f-d14460698d44.jpg');
+    background-image: url('../assets/rm314-adj-02.jpg');
     opacity: 0.85;
 }
 
