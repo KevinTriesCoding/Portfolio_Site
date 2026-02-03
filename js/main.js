@@ -35,9 +35,10 @@ function initNavScroll() {
     if (!nav) return;
 
     function updateNav() {
-        const parallaxHeight = heroWrap ? heroWrap.offsetHeight : 0;
-        const overDarkHero = heroWrap && window.scrollY < parallaxHeight - 50;
-        if (overDarkHero) {
+        const ctaSection = document.querySelector('#contact');
+        const darkEnd = ctaSection ? ctaSection.offsetTop - 50 : (heroWrap ? heroWrap.offsetHeight : 0);
+        const overDarkSection = window.scrollY < darkEnd;
+        if (overDarkSection) {
             nav.classList.add('nav-over-hero');
             nav.style.background = 'transparent';
         } else {

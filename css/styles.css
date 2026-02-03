@@ -291,20 +291,102 @@ nav.nav-over-hero .nav-links a:hover {
     background-image: url('../assets/3408105.jpg');
 }
 
-.parallax-scroll-section--2 {
+@media (max-width: 1024px) {
+    .parallax-scroll-section {
+        background-attachment: scroll;
+    }
+}
+
+/* About & Work: same image-as-background treatment as hero */
+.section-bg {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    max-width: none;
+    background-attachment: fixed;
+}
+
+.section-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 22, 40, 0.72);
+    z-index: 0;
+}
+
+.section-bg .section-inner,
+.section-bg .section-header,
+.section-bg .work-grid,
+.section-bg .process-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.section-bg--image1 {
+    background-color: #0a1628;
+    background-image: url('../assets/3408105.jpg');
+}
+
+.section-bg--image2 {
     background-color: #0d1f3c;
     background-image: url('../assets/3409297.jpg');
 }
 
-.parallax-scroll-section--3 {
+.section-bg--image3 {
     background-color: #0f2847;
     background-image: url('../assets/rm314-adj-02.jpg');
 }
 
 @media (max-width: 1024px) {
-    .parallax-scroll-section {
+    .section-bg {
         background-attachment: scroll;
     }
+}
+
+.section-bg .section-eyebrow,
+.section-bg .section-title,
+.section-bg h2,
+.section-bg h3,
+.section-bg h4,
+.section-bg p,
+.section-bg .work-tag,
+.section-bg .work-description,
+.section-bg .process-number,
+.section-bg .process-item p,
+.section-bg .btn,
+.section-bg a {
+    color: var(--paper);
+}
+
+.section-bg .section-eyebrow {
+    opacity: 0.9;
+}
+
+.section-bg p,
+.section-bg .work-description,
+.section-bg .process-item p {
+    color: rgba(250, 250, 249, 0.88);
+}
+
+.section-bg .btn-secondary {
+    border-bottom-color: var(--paper);
+    color: var(--paper);
+}
+
+.section-bg .btn-secondary:hover {
+    border-bottom-color: var(--paper);
+    color: var(--paper);
+    opacity: 0.9;
+}
+
+.section-bg .work-image {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.section-bg .work-image > div {
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .parallax-scroll-section .hero {
