@@ -51,9 +51,31 @@ function initNavScroll() {
     updateNav();
 }
 
-/* --- Homepage: vertical parallax (scroll-through sections, no JS needed) --- */
+/* --- Homepage hero: Abstract_bg4 & bg5 layers move on scroll (seamless, no borders) --- */
 function initHeroParallax() {
-    /* Vertical scroll-through is handled by CSS (parallax-scroll-section + background-attachment: fixed) */
+    const layers = document.querySelectorAll('.hero-parallax-layer');
+    if (!layers.length) return;
+
+    let ticking = false;
+    function update() {
+        const scrollY = window.scrollY;
+        layers.forEach((layer) => {
+            const speed = parseFloat(layer.dataset.speed) || 0.15;
+            const y = scrollY * speed * 0.35;
+            layer.style.transform = `translate3d(0, ${y}px, 0)`;
+        });
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(update);
+        }
+    }
+
+    window.addEventListener('scroll', requestTick, { passive: true });
+    update();
 }
 
 /* --- Intersection Observer (Fade Ins) --- */

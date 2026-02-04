@@ -287,8 +287,42 @@ nav.nav-over-hero .nav-links a:hover {
 }
 
 .parallax-scroll-section--1 {
+    position: relative;
     background-color: #0a1628;
     background-image: url('../assets/Abstract_bg2.jpg');
+}
+
+.hero-parallax-layers {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-parallax-layer {
+    position: absolute;
+    inset: -10%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: transform;
+}
+
+.hero-parallax-layer--bg4 {
+    background-image: url('../assets/Abstract_bg4.jpg');
+    opacity: 0.55;
+}
+
+.hero-parallax-layer--bg5 {
+    background-image: url('../assets/Abstract_bg5.jpg');
+    opacity: 0.5;
+}
+
+.parallax-scroll-section .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
 }
 
 @media (max-width: 1024px) {
@@ -387,12 +421,6 @@ nav.nav-over-hero .nav-links a:hover {
 
 .section-bg .work-image > div {
     background: rgba(255, 255, 255, 0.08);
-}
-
-.parallax-scroll-section .hero {
-    position: relative;
-    z-index: 1;
-    min-height: 100vh;
 }
 
 .hero-wrap .hero .section-eyebrow,
