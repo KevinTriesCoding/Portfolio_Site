@@ -1,5 +1,5 @@
-import React from 'react';
-import { FileText, Search, Lightbulb, Rocket } from 'lucide-react';
+import React from 'react'
+import { FileText, Search, Lightbulb, Rocket } from 'lucide-react'
 export function Process() {
   return (
     <section className="relative bg-[#3b2d68] text-white pt-32 pb-40 overflow-hidden">
@@ -10,12 +10,12 @@ export function Process() {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
-          className="relative block w-[calc(100%+1.3px)] h-[60px]">
-
+          className="relative block w-[calc(100%+1.3px)] h-[60px]"
+        >
           <path
             d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-            className="fill-white">
-          </path>
+            className="fill-white"
+          ></path>
         </svg>
       </div>
 
@@ -28,8 +28,8 @@ export function Process() {
             r="40"
             stroke="currentColor"
             strokeWidth="8"
-            fill="none" />
-
+            fill="none"
+          />
         </svg>
       </div>
       <div className="absolute bottom-20 left-10 opacity-20">
@@ -38,18 +38,18 @@ export function Process() {
             d="M0 10 Q 37.5 20 75 10 T 150 10"
             stroke="currentColor"
             strokeWidth="4"
-            fill="none" />
-
+            fill="none"
+          />
         </svg>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <p className="text-lg italic opacity-80 mb-2">
-            Methodology
+            This is how my brain works (most of the time)
           </p>
           <h2 className="text-6xl font-bold uppercase tracking-tight">
-            How I Work
+            Process
           </h2>
         </div>
 
@@ -58,9 +58,9 @@ export function Process() {
           <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full overflow-hidden border-8 border-white/10 hidden md:block z-0">
             <img
               src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Process"
-              className="w-full h-full object-cover opacity-50" />
-
+              alt="Brainstorming"
+              className="w-full h-full object-cover opacity-50"
+            />
           </div>
 
           {/* Process Steps Grid */}
@@ -70,9 +70,10 @@ export function Process() {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#ff4d8d] mb-4 md:ml-auto">
                 <FileText className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-2">1. DISCOVER</h3>
+              <h3 className="text-2xl font-bold mb-2">1. BRIEFING</h3>
               <p className="opacity-80">
-                Deep dive into the problem space to understand stakeholders and constraints.
+                Stakeholder hands me over the requirements. Which is the start
+                of user stories & documentation.
               </p>
             </div>
 
@@ -83,7 +84,8 @@ export function Process() {
               </div>
               <h3 className="text-2xl font-bold mb-2">2. RESEARCH</h3>
               <p className="opacity-80">
-                Explore the landscape. What works? What can we learn from others?
+                I search every crevice on Google & conduct market analysis -
+                what are the competitors doing?
               </p>
             </div>
 
@@ -93,10 +95,11 @@ export function Process() {
                 <Lightbulb className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-2">
-                3. BUILD
+                3. BRAINSTORM & CREATE
               </h3>
               <p className="opacity-80">
-                Test early, learn fast, and refine continuously through iteration.
+                Rapid prototyping, wire-framing, discussion period with the
+                designers and developers. Repeat.
               </p>
             </div>
 
@@ -107,12 +110,13 @@ export function Process() {
               </div>
               <h3 className="text-2xl font-bold mb-2">4. LAUNCH</h3>
               <p className="opacity-80">
-                Ship it, then track what matters. Real impact is measured in outcomes.
+                Audited the build - check! Notify the stakeholder(s), update
+                release notes, and deploy. Followed by measuring its success.
               </p>
             </div>
           </div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  )
 }

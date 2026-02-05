@@ -1,5 +1,5 @@
-import React from 'react';
-import { LandingPage } from './pages/LandingPage';
+import React from 'react'
+import { LandingPage } from './pages/LandingPage'
 export function App() {
-  return <LandingPage />;
+  return <LandingPage />
 }
