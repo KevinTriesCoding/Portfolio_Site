@@ -31,12 +31,11 @@ function initPageLoader() {
 /* --- Navigation Border Reveal --- */
 function initNavScroll() {
     const nav = document.querySelector('nav');
-    const heroWrap = document.querySelector('.hero-wrap');
     if (!nav) return;
 
     function updateNav() {
         const ctaSection = document.querySelector('#contact');
-        const darkEnd = ctaSection ? ctaSection.offsetTop - 50 : (heroWrap ? heroWrap.offsetHeight : 0);
+        const darkEnd = ctaSection ? ctaSection.offsetTop - 50 : Infinity;
         const overDarkSection = window.scrollY < darkEnd;
         if (overDarkSection) {
             nav.classList.add('nav-over-hero');

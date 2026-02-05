@@ -57,8 +57,9 @@ body {
     font-size: var(--text-base);
     line-height: 1.6;
     color: var(--ink);
-    background-color: var(--paper);
+    background-color: #0a1628;
     overflow-x: hidden;
+    position: relative;
 }
 
 body.loading {
@@ -270,180 +271,116 @@ nav.nav-over-hero .nav-links a:hover {
 }
 
 /* =============================================
-   HERO + Vertical scroll-through parallax
+   SINGLE CANVAS — one full-page background, no seams
    ============================================= */
-.hero-wrap {
-    position: relative;
-}
-
-/* Each image is a full-viewport section; scroll down to "meet" the next */
-.parallax-scroll-section {
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    background-attachment: fixed;
-}
-
-.parallax-scroll-section--1 {
-    position: relative;
-    background-color: #0a1628;
-    background-image: url('../assets/Abstract_bg2.jpg');
-}
-
-.parallax-scroll-section .hero {
-    position: relative;
-    z-index: 1;
-    min-height: 100vh;
-}
-
-@media (max-width: 1024px) {
-    .parallax-scroll-section {
-        background-attachment: scroll;
-    }
-}
-
-/* About (Intro) & Work (Recent Work): Abstract_bg4 / bg5, seamless transition from hero */
-.hero-wrap {
-    margin-bottom: 0;
-}
-
-.section-bg {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    max-width: none;
-    background-attachment: fixed;
-}
-
-.section-bg::before {
-    content: '';
-    position: absolute;
+.page-bg {
+    position: fixed;
     inset: 0;
-    background: rgba(10, 22, 40, 0.68);
-    z-index: 0;
-}
-
-.section-bg.section-bg--image2::before,
-.section-bg.section-bg--image3::before {
-    background: linear-gradient(to bottom, rgba(10, 22, 40, 0.45) 0%, rgba(10, 22, 40, 0.68) 18%, rgba(10, 22, 40, 0.68) 82%, rgba(10, 22, 40, 0.45) 100%);
-}
-
-.section-bg .section-inner,
-.section-bg .section-header,
-.section-bg .work-grid,
-.section-bg .process-inner {
-    position: relative;
-    z-index: 1;
-}
-
-.section-bg--image1 {
-    background-color: #0a1628;
-    background-image: url('../assets/Abstract_bg2.jpg');
-}
-
-.section-bg--image2 {
+    z-index: -1;
     background-color: #0a1628;
     background-image: url('../assets/Abstract_bg4.jpg');
-}
-
-.section-bg--image3 {
-    background-color: #0a1628;
-    background-image: url('../assets/Abstract_bg5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 @media (max-width: 1024px) {
-    .section-bg {
+    .page-bg {
         background-attachment: scroll;
     }
 }
 
-.section-bg .section-eyebrow,
-.section-bg .section-title,
-.section-bg h2,
-.section-bg h3,
-.section-bg h4,
-.section-bg p,
-.section-bg .work-tag,
-.section-bg .work-description,
-.section-bg .process-number,
-.section-bg .process-item p,
-.section-bg .btn,
-.section-bg a {
+/* Content sections sit on top of the canvas; transparent so one bg shows through */
+.hero,
+.about,
+.work,
+.process {
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+/* Light text on dark canvas */
+.hero .section-eyebrow,
+.hero h1,
+.hero .hero-description,
+.about .section-eyebrow,
+.about .section-title,
+.about p,
+.work .section-eyebrow,
+.work .section-title,
+.work h3,
+.work .work-tag,
+.work .work-description,
+.work .btn,
+.work a,
+.process .section-eyebrow,
+.process .section-title,
+.process h4,
+.process .process-number,
+.process .process-item p {
     color: var(--paper);
 }
 
-.section-bg .section-eyebrow {
+.hero .section-eyebrow,
+.about .section-eyebrow,
+.work .section-eyebrow,
+.process .section-eyebrow {
     opacity: 0.9;
 }
 
-.section-bg p,
-.section-bg .work-description,
-.section-bg .process-item p {
+.hero .hero-description,
+.about p,
+.work .work-description,
+.process .process-item p {
     color: rgba(250, 250, 249, 0.88);
 }
 
-.section-bg .btn-secondary {
-    border-bottom-color: var(--paper);
-    color: var(--paper);
-}
-
-.section-bg .btn-secondary:hover {
-    border-bottom-color: var(--paper);
-    color: var(--paper);
-    opacity: 0.9;
-}
-
-.section-bg .work-image {
-    background: rgba(0, 0, 0, 0.3);
-}
-
-.section-bg .work-image > div {
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.hero-wrap .hero .section-eyebrow,
-.hero-wrap .hero h1,
-.hero-wrap .hero .hero-description {
-    color: var(--paper);
-}
-
-.hero-wrap .hero .section-eyebrow {
-    opacity: 0.9;
-}
-
-.hero-wrap .hero .hero-description {
-    color: rgba(250, 250, 249, 0.88);
-}
-
-.hero-wrap .hero h1 span {
+.hero h1 span {
     color: rgba(255, 255, 255, 0.95);
     font-style: italic;
     font-weight: 400;
 }
 
-.hero-wrap .hero .btn.hero-cta {
+.hero .btn.hero-cta {
     color: var(--ink);
     background: var(--paper);
     border-color: var(--paper);
 }
 
-.hero-wrap .hero .btn.hero-cta:hover {
+.hero .btn.hero-cta:hover {
     background: rgba(250, 250, 249, 0.92);
     color: var(--ink);
     border-color: var(--paper);
 }
 
-.hero-wrap .hero-image-wrapper {
+.hero .hero-image-wrapper {
     border-color: rgba(250, 250, 249, 0.25);
     background: rgba(13, 13, 13, 0.4);
 }
 
-.hero-wrap .hero-image-placeholder {
+.hero .hero-image-placeholder {
     color: var(--paper);
+}
+
+.work .btn-secondary {
+    border-bottom-color: var(--paper);
+    color: var(--paper);
+}
+
+.work .btn-secondary:hover {
+    border-bottom-color: var(--paper);
+    color: var(--paper);
+    opacity: 0.9;
+}
+
+.work .work-image {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.work .work-image > div {
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .hero {
@@ -698,7 +635,7 @@ section {
    CTA (minimal dark block)
    ============================================= */
 .cta {
-    background: var(--ink);
+    background: transparent;
     margin: 0;
     max-width: none;
     padding: var(--space-4xl) 3rem;
@@ -732,9 +669,9 @@ section {
    FOOTER (minimal)
    ============================================= */
 footer {
-    background: var(--paper);
+    background: transparent;
     padding: var(--space-xl) 3rem;
-    color: var(--muted);
+    color: rgba(250, 250, 249, 0.75);
     font-size: var(--text-sm);
 }
 
