@@ -33,7 +33,7 @@ export function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <div className="h-12 w-12 rounded-full bg-[#3b2d68] flex items-center justify-center text-white font-bold text-xl border-2 border-white shadow-lg">
-              SL.
+              KM.
             </div>
           </div>
 

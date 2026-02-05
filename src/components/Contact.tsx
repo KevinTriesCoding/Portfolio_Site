@@ -1,5 +1,5 @@
 import React from 'react'
-import { Linkedin, Globe, Heart, Coffee, Trophy } from 'lucide-react'
+import { Linkedin, Coffee, Trophy } from 'lucide-react'
 import { Button } from './ui/Button'
 export function Contact() {
   return (
@@ -63,57 +63,49 @@ export function Contact() {
           </div>
         </div>
 
-        {/* Fun Facts Grid */}
+        {/* Other Tidbits */}
         <div className="mb-24">
           <h3 className="text-3xl font-bold text-gray-400 uppercase mb-12 text-center md:text-left">
-            Other Awesomeness
+            Other Tidbits
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Fact 1 */}
+            {/* Fitness */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Trophy className="w-8 h-8 text-[#ff4d8d]" />
+                <span className="text-3xl" aria-hidden>🏃</span>
                 <h4 className="text-xl font-bold text-gray-900">
-                  Culture is a Team Sport
+                  Fitness fanatic
                 </h4>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                Morale booster at Microsoft, head of culture at Kater—I've
-                always believed great teams don't just happen. After all, even
-                The Beatles needed more than just Ringo.
+                When not working, you can likely catch me at my gym or on a run. I've always found exercise to be my go-to way to decompress after a chaotic day at work.
               </p>
             </div>
 
-            {/* Fact 2 */}
+            {/* Bookworm */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Globe className="w-8 h-8 text-[#2d58db]" />
+                <span className="text-3xl" aria-hidden>🤓</span>
                 <h4 className="text-xl font-bold text-gray-900">
-                  Moved Countries—With a Toddler and Six Pets
+                  Bookworm
                 </h4>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                Relocated from Canada to Ireland with my family in tow—an
-                adventure in logistics, adaptability, and keeping everyone on
-                board (literally).
+                This may come as a surprise but… I'm a big ol' nerd! I love reading and currently have a fixation on the Classics of Greece and Rome.
               </p>
             </div>
 
-            {/* Fact 3 */}
+            {/* Sports */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Heart className="w-8 h-8 text-[#ff4d8d]" />
+                <span className="text-3xl" aria-hidden>🏀</span>
                 <h4 className="text-xl font-bold text-gray-900">
-                  Animal Lover, Always
+                  Sports are life
                 </h4>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                Life's never dull with two golden retrievers (Millie & Marty),
-                two rescued bunnies (Optimus & Tulip), and two mischievous cats
-                (Gyoza & Miso). My Zoom background may look like a chaotic
-                pet-friendly farmhouse—but honestly, I wouldn't have it any
-                other way.
+                BEWARE: Will talk your head off about the latest NBA, NFL, and MMA news. These are all a part of my daily nutrition.
               </p>
             </div>
           </div>
@@ -139,22 +131,24 @@ export function Contact() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2">
               <div className="h-10 w-10 rounded-full bg-[#3b2d68] flex items-center justify-center text-white font-bold">
-                SL.
+                KM.
               </div>
             </div>
 
             <div className="text-center">
               <a
-                href="mailto:sherlaine.lau@gmail.com"
+                href="mailto:your@email.com"
                 className="text-[#00a651] font-bold text-lg hover:underline"
               >
-                sherlaine.lau@gmail.com
+                your@email.com
               </a>
             </div>
 
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/kevinmoye"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[#0077b5] text-white p-2 rounded-sm hover:opacity-90 transition-opacity"
               >
                 <Linkedin size={20} />

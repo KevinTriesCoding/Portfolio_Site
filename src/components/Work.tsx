@@ -75,23 +75,22 @@ export function Work() {
         {/* Projects List */}
         <div className="space-y-12">
           <Project
-            title="Dialpad"
-            description="Empowering businesses with AI-powered communication tools across mobile and desktop platforms."
+            title="The ABA Project"
+            description="My personal project where I provided digital marketing services to ABA companies."
             image="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             isReversed={false}
           />
 
           <Project
-            title="Microsoft - Flip"
-            description="Leads customer feedback requests by ensuring that the Flipgrid community over 100 million+ has a voice."
+            title="Aveanna Healthcare"
+            description="Created workflow automations to increase task efficiency and quality assurance for rote tasks."
             image="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-            logo="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
             isReversed={true}
           />
 
           <Project
-            title="Kater Technologies"
-            description="Kater Technologies Inc was a Vancouver-based Mobility-as-a-Service (MaaS) technology company."
+            title="Action Behavior Centers"
+            description="Built performance dashboard for internal team to track KPIs."
             image="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             isReversed={false}
           />

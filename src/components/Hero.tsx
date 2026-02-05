@@ -19,9 +19,9 @@ export function Hero() {
           <div className="space-y-8">
             <div className="inline-block bg-[#2d58db] p-6 shadow-lg transform -rotate-1">
               <h1 className="text-4xl md:text-5xl font-bold text-white uppercase leading-tight">
-                Hi! My name is
+                Hey there! My name is
                 <br />
-                Sherlaine
+                Kevin
               </h1>
             </div>
 
@@ -29,17 +29,17 @@ export function Hero() {
 
             <div className="inline-block bg-[#2d58db] p-6 shadow-lg transform rotate-1 max-w-xl">
               <h2 className="text-2xl md:text-3xl font-bold text-white uppercase leading-tight">
-                A Product Manager who listens, iterates, and ships
+                An operations/project manager who leads, iterates, and ships
               </h2>
             </div>
           </div>
 
-          {/* Right Content (Image) */}
+          {/* Right Content (Image) — add your photo as public/my_photo.jpg */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 z-20">
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Sherlaine"
+                src="/my_photo.jpg"
+                alt="Kevin Moye"
                 className="w-full h-full object-cover shadow-2xl"
               />
             </div>
