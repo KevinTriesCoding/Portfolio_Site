@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const location = useLocation()
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
@@ -11,18 +13,9 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
   const navLinks = [
-    {
-      name: 'HOME',
-      href: '#',
-    },
-    {
-      name: 'ABOUT',
-      href: '#about',
-    },
-    {
-      name: 'PORTFOLIO',
-      href: '#work',
-    },
+    { name: 'HOME', to: '/' },
+    { name: 'ABOUT', to: '/about' },
+    { name: 'PORTFOLIO', to: '/#work' },
   ]
   return (
     <nav
@@ -32,23 +25,26 @@ export function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="h-12 w-12 rounded-full bg-[#3b2d68] flex items-center justify-center text-white font-bold text-xl border-2 border-white shadow-lg">
-              KM.
-            </div>
+            <Link to="/" className="block">
+              <div className="h-12 w-12 rounded-full bg-[#3b2d68] flex items-center justify-center text-white font-bold text-xl border-2 border-white shadow-lg">
+                KM.
+              </div>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.to}
                 className={`text-sm font-bold tracking-widest hover:text-[#ff4d8d] transition-colors ${
-                  isScrolled ? 'text-gray-800' : 'text-gray-800'
+                  location.pathname === link.to ? 'text-[#ff4d8d]' : 'text-gray-800'
                 }`}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -68,14 +64,14 @@ export function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white absolute top-full left-0 right-0 shadow-lg py-4 px-4 flex flex-col space-y-4">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.to}
               className="text-gray-800 font-bold hover:text-[#ff4d8d] block py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
       )}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 interface ProjectProps {
   title: string
@@ -34,12 +35,12 @@ function Project({
           {description}
         </p>
         <div>
-          <a
-            href="#"
+          <Link
+            to="/project/case-study"
             className="inline-flex items-center text-[#ff4d8d] font-bold uppercase tracking-widest border-b-2 border-[#ff4d8d] pb-1 hover:text-[#e63e7b] hover:border-[#e63e7b] transition-colors"
           >
             Live Project <ArrowRight className="ml-2 h-4 w-4" />
-          </a>
+          </Link>
         </div>
       </div>
 
