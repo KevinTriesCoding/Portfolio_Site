@@ -7,6 +7,7 @@ interface ProjectProps {
   image: string
   logo?: string
   isReversed?: boolean
+  to?: string
 }
 function Project({
   title,
@@ -14,6 +15,7 @@ function Project({
   image,
   logo,
   isReversed = false,
+  to = '/project/case-study',
 }: ProjectProps) {
   return (
     <div
@@ -36,10 +38,10 @@ function Project({
         </p>
         <div>
           <Link
-            to="/project/case-study"
+            to={to}
             className="inline-flex items-center text-[#ff4d8d] font-bold uppercase tracking-widest border-b-2 border-[#ff4d8d] pb-1 hover:text-[#e63e7b] hover:border-[#e63e7b] transition-colors"
           >
-            Live Project <ArrowRight className="ml-2 h-4 w-4" />
+            Take a closer look <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </div>
       </div>
@@ -73,26 +75,27 @@ export function Work() {
           </h2>
         </div>
 
-        {/* Projects List */}
+        {/* Projects List — Aveanna & Action Behavior first, The ABA Project last */}
         <div className="space-y-12">
-          <Project
-            title="The ABA Project"
-            description="My personal project where I provided digital marketing services to ABA companies."
-            image="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-            isReversed={false}
-          />
-
           <Project
             title="Aveanna Healthcare"
             description="Created workflow automations to increase task efficiency and quality assurance for rote tasks."
-            image="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-            isReversed={true}
+            image="/assets/workflow_automations.png"
+            isReversed={false}
+            to="/project/aveanna"
           />
 
           <Project
             title="Action Behavior Centers"
             description="Built performance dashboard for internal team to track KPIs."
-            image="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image="/assets/Action_behavior.png"
+            isReversed={true}
+          />
+
+          <Project
+            title="The ABA Project"
+            description="My personal project where I provided digital marketing services to ABA companies."
+            image="/assets/TAP_homepage.jpg"
             isReversed={false}
           />
         </div>
