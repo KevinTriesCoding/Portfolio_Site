@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 interface ProjectProps {
@@ -8,6 +8,7 @@ interface ProjectProps {
   logo?: string
   isReversed?: boolean
   to?: string
+  flyDirection?: 'left' | 'right'
 }
 function Project({
   title,
@@ -16,9 +17,35 @@ function Project({
   logo,
   isReversed = false,
   to = '/project/case-study',
+  flyDirection = 'right',
 }: ProjectProps) {
+  const [isVisible, setIsVisible] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+  }, [])
+
   return (
     <div
+      ref={ref}
       className={`flex flex-col ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-16 items-center py-16`}
     >
       {/* Text Content */}
@@ -53,7 +80,13 @@ function Project({
           <img
             src={image}
             alt={title}
-            className="relative w-full rounded-sm shadow-xl transform group-hover:-translate-y-1 group-hover:-translate-x-1 transition-transform duration-300"
+            className={`relative w-full rounded-sm shadow-xl transform group-hover:-translate-y-1 group-hover:-translate-x-1 transition-transform duration-300 ${
+              isVisible
+                ? flyDirection === 'left'
+                  ? 'animate-fly-in-left'
+                  : 'animate-fly-in-right'
+                : ''
+            }`}
           />
         </div>
       </div>
@@ -83,6 +116,7 @@ export function Work() {
             image="/assets/workflow_automations.png"
             isReversed={false}
             to="/project/aveanna"
+            flyDirection="right"
           />
 
           <Project
@@ -90,6 +124,8 @@ export function Work() {
             description="Built performance dashboard for internal team to track KPIs."
             image="/assets/Action_behavior.png"
             isReversed={true}
+            to="/project/action-behavior"
+            flyDirection="left"
           />
 
           <Project
@@ -97,6 +133,7 @@ export function Work() {
             description="My personal project where I provided digital marketing services to ABA companies."
             image="/assets/TAP_homepage.jpg"
             isReversed={false}
+            flyDirection="right"
           />
         </div>
 

@@ -4,6 +4,7 @@ import { LandingPage } from './pages/LandingPage'
 import { AboutPage } from './pages/AboutPage'
 import { CaseStudyPage } from './pages/CaseStudyPage'
 import { AveannaCaseStudyPage } from './pages/AveannaCaseStudyPage'
+import { ActionBehaviorCaseStudyPage } from './pages/ActionBehaviorCaseStudyPage'
 
 export function App() {
   return (
@@ -13,6 +14,7 @@ export function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/project/case-study" element={<CaseStudyPage />} />
         <Route path="/project/aveanna" element={<AveannaCaseStudyPage />} />
+        <Route path="/project/action-behavior" element={<ActionBehaviorCaseStudyPage />} />
       </Routes>
     </BrowserRouter>
   )

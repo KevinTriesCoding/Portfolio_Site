@@ -114,11 +114,7 @@ export function AboutPage() {
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-[0.9] tracking-tight mb-8 max-w-5xl">
-            I AM MORE THAN
-            <br />
-            JUST YOUR
-            <br />
-            REGULAR "VANILLA"
+            OK... So tell us a bit more about yourself
           </h1>
 
           <SquiggleArrow className="absolute top-0 left-[40%] md:left-[35%] -rotate-12" />
@@ -148,7 +144,7 @@ export function AboutPage() {
           <div className="w-full md:w-1/3 relative">
             <div className="aspect-[3/4] bg-gray-200 rounded-sm overflow-hidden relative">
               <img
-                src="/my_photo.jpg"
+                src="/assets/hippy_vibes.jpeg"
                 alt="Kevin Moye"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />

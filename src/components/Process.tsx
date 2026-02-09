@@ -1,5 +1,53 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FileText, Search, Lightbulb, Rocket } from 'lucide-react'
+
+function ProcessStep({
+  children,
+  direction,
+}: {
+  children: React.ReactNode
+  direction: 'north' | 'east' | 'south' | 'west'
+}) {
+  const [isVisible, setIsVisible] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+  }, [])
+
+  const directionClass =
+    direction === 'north'
+      ? 'animate-whip-north'
+      : direction === 'east'
+      ? 'animate-whip-east'
+      : direction === 'south'
+      ? 'animate-whip-south'
+      : 'animate-whip-west'
+
+  return (
+    <div ref={ref} className={isVisible ? directionClass : ''}>
+      {children}
+    </div>
+  )
+}
+
 export function Process() {
   return (
     <section className="relative bg-[#3b2d68] text-white pt-32 pb-40 overflow-hidden">
@@ -65,55 +113,63 @@ export function Process() {
 
           {/* Process Steps Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-16 relative z-10">
-            {/* Step 1 */}
-            <div className="text-center md:text-right">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#ff4d8d] mb-4 md:ml-auto">
-                <FileText className="w-6 h-6 text-white" />
+            {/* Step 1 - From North */}
+            <ProcessStep direction="north">
+              <div className="text-center md:text-right">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#ff4d8d] mb-4 md:ml-auto">
+                  <FileText className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">1. BRIEFING</h3>
+                <p className="opacity-80">
+                  Stakeholder hands me over the requirements. Which is the start
+                  of user stories & documentation.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-2">1. BRIEFING</h3>
-              <p className="opacity-80">
-                Stakeholder hands me over the requirements. Which is the start
-                of user stories & documentation.
-              </p>
-            </div>
+            </ProcessStep>
 
-            {/* Step 2 */}
-            <div className="text-center md:text-left">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#ff4d8d] mb-4 md:mr-auto">
-                <Search className="w-6 h-6 text-white" />
+            {/* Step 2 - From East */}
+            <ProcessStep direction="east">
+              <div className="text-center md:text-left">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#ff4d8d] mb-4 md:mr-auto">
+                  <Search className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">2. RESEARCH</h3>
+                <p className="opacity-80">
+                  I search every crevice on Google & conduct market analysis -
+                  what are the competitors doing?
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-2">2. RESEARCH</h3>
-              <p className="opacity-80">
-                I search every crevice on Google & conduct market analysis -
-                what are the competitors doing?
-              </p>
-            </div>
+            </ProcessStep>
 
-            {/* Step 3 */}
-            <div className="text-center md:text-right">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#ff4d8d] mb-4 md:ml-auto">
-                <Lightbulb className="w-6 h-6 text-white" />
+            {/* Step 3 - From South */}
+            <ProcessStep direction="south">
+              <div className="text-center md:text-right">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#ff4d8d] mb-4 md:ml-auto">
+                  <Lightbulb className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">
+                  3. BRAINSTORM & CREATE
+                </h3>
+                <p className="opacity-80">
+                  Rapid prototyping, wire-framing, discussion period with the
+                  designers and developers. Repeat.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-2">
-                3. BRAINSTORM & CREATE
-              </h3>
-              <p className="opacity-80">
-                Rapid prototyping, wire-framing, discussion period with the
-                designers and developers. Repeat.
-              </p>
-            </div>
+            </ProcessStep>
 
-            {/* Step 4 */}
-            <div className="text-center md:text-left">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#ff4d8d] mb-4 md:mr-auto">
-                <Rocket className="w-6 h-6 text-white" />
+            {/* Step 4 - From West */}
+            <ProcessStep direction="west">
+              <div className="text-center md:text-left">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#ff4d8d] mb-4 md:mr-auto">
+                  <Rocket className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">4. LAUNCH</h3>
+                <p className="opacity-80">
+                  Audited the build - check! Notify the stakeholder(s), update
+                  release notes, and deploy. Followed by measuring its success.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-2">4. LAUNCH</h3>
-              <p className="opacity-80">
-                Audited the build - check! Notify the stakeholder(s), update
-                release notes, and deploy. Followed by measuring its success.
-              </p>
-            </div>
+            </ProcessStep>
           </div>
         </div>
       </div>

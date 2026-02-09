@@ -11,7 +11,105 @@
 html {
   scroll-behavior: smooth;
 }
-/* So fixed header doesn’t cover section when scrolling to #about */
+/* So fixed header doesn't cover section when scrolling to #about */
 [id="about"] {
   scroll-margin-top: 6rem;
+}
+
+/* Fly-in animations for Work images */
+@keyframes fly-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fly-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fly-in-right {
+  animation: fly-in-right 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fly-in-left {
+  animation: fly-in-left 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Cardinal direction animations for Process steps */
+@keyframes whip-from-north {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes whip-from-east {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes whip-from-south {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes whip-from-west {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-whip-north {
+  animation: whip-from-north 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-whip-east {
+  animation: whip-from-east 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-whip-south {
+  animation: whip-from-south 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-whip-west {
+  animation: whip-from-west 0.8s ease-out forwards;
+  opacity: 0;
 }
