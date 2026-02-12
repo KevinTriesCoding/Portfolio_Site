@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from './ui/Button'
+import { Link } from 'react-router-dom'
 export function About() {
   return (
     <section id="about" className="py-20 bg-white relative overflow-hidden">
@@ -22,23 +22,22 @@ export function About() {
               Quick get to know me
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 uppercase leading-none flex flex-wrap items-center gap-3">
-              Lorem ipsum
-            </h2>
-
             <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
               <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">
                 My name is Kevin Moye
               </p>
               <p>
-                I'm an operations and project manager who leads, iterates, and ships—focused on clarity, efficiency, and getting things done.
+                I'm a healthcare operations manager who leads, innovates, and works tirelessly to deliver the best experience possible to our clientele.
               </p>
             </div>
 
             <div className="pt-4">
-              <Button variant="primary" size="lg">
+              <Link
+                to="/about"
+                className="inline-flex items-center justify-center rounded-sm font-bold transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 uppercase tracking-wider h-14 px-8 text-base bg-[#3b2d68] text-white hover:bg-[#2a1f4d] focus:ring-[#3b2d68]"
+              >
                 Learn More About Me
-              </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -40,14 +40,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0 text-center md:text-left">
             <a
-              href="mailto:your@email.com"
+              href="mailto:kevcmoye98@gmail.com"
               className="text-2xl md:text-3xl font-bold text-[#00E5FF] hover:text-white transition-colors block mb-4"
             >
-              your@email.com
+              kevcmoye98@gmail.com
             </a>
             <div className="flex justify-center md:justify-start space-x-4">
               <a
-                href="https://www.linkedin.com/in/kevinmoye"
+                href="https://www.linkedin.com/in/kevin-moye-410210216/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-[#00E5FF] text-[#001F3F] rounded hover:bg-white transition-colors"

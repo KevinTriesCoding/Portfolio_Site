@@ -32,33 +32,22 @@ export function Contact() {
             to click hire me
           </h2>
 
-          {/* Squiggle Arrow */}
-          <div className="flex justify-center mt-4">
+          {/* Elegant down arrow */}
+          <div className="flex justify-center mt-6">
             <svg
-              width="60"
-              height="60"
-              viewBox="0 0 60 60"
-              className="text-[#4ade80] transform rotate-12"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              className="text-[#3b2d68] animate-bounce"
             >
               <path
-                d="M10 10 Q 30 5, 30 30 T 50 50"
+                d="M12 5v14M5 12l7 7 7-7"
                 stroke="currentColor"
-                strokeWidth="4"
-                fill="none"
-                markerEnd="url(#arrowhead)"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
-              <defs>
-                <marker
-                  id="arrowhead"
-                  markerWidth="10"
-                  markerHeight="7"
-                  refX="0"
-                  refY="3.5"
-                  orient="auto"
-                >
-                  <polygon points="0 0, 10 3.5, 0 7" fill="currentColor" />
-                </marker>
-              </defs>
             </svg>
           </div>
         </div>
@@ -137,16 +126,16 @@ export function Contact() {
 
             <div className="text-center">
               <a
-                href="mailto:your@email.com"
+                href="mailto:kevcmoye98@gmail.com"
                 className="text-[#00a651] font-bold text-lg hover:underline"
               >
-                your@email.com
+                kevcmoye98@gmail.com
               </a>
             </div>
 
             <div className="flex gap-4">
               <a
-                href="https://www.linkedin.com/in/kevinmoye"
+                href="https://www.linkedin.com/in/kevin-moye-410210216/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#0077b5] text-white p-2 rounded-sm hover:opacity-90 transition-opacity"

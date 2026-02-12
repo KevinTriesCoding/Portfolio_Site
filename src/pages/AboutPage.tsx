@@ -4,7 +4,7 @@ import { Section } from '../components/Section'
 import { SquiggleArrow, ZigZag, CircleOutline } from '../components/Decorations'
 import { Timeline } from '../components/Timeline'
 import { SkillGrid } from '../components/SkillGrid'
-import { Shield, Users, RefreshCw, Cpu } from 'lucide-react'
+import { Shield, Users, RefreshCw, Cpu, Workflow, BarChart3 } from 'lucide-react'
 
 export function AboutPage() {
   const skills = [
@@ -35,6 +35,20 @@ export function AboutPage() {
       description:
         'Lifelong learner hunting for the unfair advantage. LLMs as co-pilot for problem-solving; Python and web dev to ship tools; Excel/Sheets and SQL to treat data as the source of truth. I don\'t wait for a manual—I figure it out.',
       color: 'bg-purple-100',
+    },
+    {
+      icon: Workflow,
+      title: 'System Design',
+      description:
+        "I take a keen look at how my organization's processes actually work and try to find the friction worth eliminating. When I build something new, it must pass three tests: A) Easy to adopt across the team B) Self-sustaining without constant oversight C) Non-disruptive to other currently existing workflows. Taking this approach has proven to lead to near seamless implementations.",
+      color: 'bg-teal-100',
+    },
+    {
+      icon: BarChart3,
+      title: 'Data Analysis & Visualization',
+      description:
+        "I love finding the human story buried in healthcare data. Python (Pandas, NumPy) and R for the heavy lifting, Excel when speed matters — whatever gets me from messy dataset to clear insight fastest. The real work isn't just crunching numbers; it's building visualizations that help my team see the trends and then allow us to build strategies around them.",
+      color: 'bg-rose-100',
     },
   ]
 
@@ -146,7 +160,7 @@ export function AboutPage() {
               <img
                 src="/assets/hippy_vibes.jpeg"
                 alt="Kevin Moye"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full object-cover transition-all duration-500"
               />
               <div className="absolute inset-0 bg-purple-900/10 mix-blend-multiply"></div>
             </div>
