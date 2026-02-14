@@ -19,9 +19,9 @@ export function Hero() {
           <div className="space-y-8">
             <div className="inline-block bg-[#2d58db] p-6 shadow-lg transform -rotate-1">
               <h1 className="text-4xl md:text-5xl font-bold text-white uppercase leading-tight">
-                Hey there! My name is
+                Hey there!
                 <br />
-                Kevin
+                My name is Kevin
               </h1>
             </div>
 
@@ -29,7 +29,7 @@ export function Hero() {
 
             <div className="inline-block bg-[#2d58db] p-6 shadow-lg transform rotate-1 max-w-xl">
               <h2 className="text-2xl md:text-3xl font-bold text-white uppercase leading-tight">
-                An operations/project manager who leads, iterates, and ships
+                A healthcare decision maker who listens, innovates, and executes
               </h2>
             </div>
           </div>

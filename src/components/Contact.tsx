@@ -1,5 +1,5 @@
 import React from 'react'
-import { Linkedin, Coffee, Trophy } from 'lucide-react'
+import { Linkedin } from 'lucide-react'
 import { Button } from './ui/Button'
 export function Contact() {
   return (
@@ -50,6 +50,17 @@ export function Contact() {
               />
             </svg>
           </div>
+
+          {/* CTA Button */}
+          <div className="mt-8">
+            <Button
+              variant="outline"
+              size="lg"
+              className="px-12 py-4 text-xl border-4 hover:bg-[#ff4d8d] hover:text-white"
+            >
+              HIRE ME
+            </Button>
+          </div>
         </div>
 
         {/* Other Tidbits */}
@@ -98,21 +109,6 @@ export function Contact() {
               </p>
             </div>
           </div>
-        </div>
-
-        {/* CTA Button */}
-        <div className="text-center mb-24">
-          <div className="flex justify-center gap-8 mb-8 text-[#ff4d8d]">
-            <Coffee className="w-8 h-8" />
-            <Trophy className="w-8 h-8" />
-          </div>
-          <Button
-            variant="outline"
-            size="lg"
-            className="px-12 py-4 text-xl border-4 hover:bg-[#ff4d8d] hover:text-white"
-          >
-            HIRE ME
-          </Button>
         </div>
 
         {/* Footer */}

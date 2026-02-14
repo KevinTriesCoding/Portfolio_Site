@@ -27,7 +27,7 @@ export function About() {
                 My name is Kevin Moye
               </p>
               <p>
-                I'm a healthcare operations manager who leads, innovates, and works tirelessly to deliver the best experience possible to our clientele.
+                I'm a healthcare operations manager who leads, innovates, and works tirelessly to deliver the best experience possible to our clientele. It is my belief that the biggest edge that can be brought to the healthcare space is the implementation of emerging technologies to create more efficient processes.
               </p>
             </div>
 
