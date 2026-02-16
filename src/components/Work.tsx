@@ -113,7 +113,7 @@ export function Work() {
           <Project
             title="Aveanna Healthcare"
             description="Created workflow automations to increase task efficiency and quality assurance for rote tasks."
-            image="/assets/workflow_automations.png"
+            image="/assets/Aveanna_logo.png"
             isReversed={false}
             to="/project/aveanna"
             flyDirection="right"

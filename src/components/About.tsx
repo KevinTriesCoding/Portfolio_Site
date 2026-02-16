@@ -9,7 +9,7 @@ export function About() {
           <div className="relative">
             <div className="aspect-[4/3] w-full overflow-hidden rounded-sm shadow-lg">
               <img
-                src="/my_photo.jpg"
+                src="/assets/Cover_photo.jpeg"
                 alt="Kevin Moye"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
