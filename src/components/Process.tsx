@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { FileText, Search, Lightbulb, Rocket } from 'lucide-react'
+import { Ear, Database, Wrench, Users } from 'lucide-react'
 
 function ProcessStep({
   children,
@@ -94,7 +94,7 @@ export function Process() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <p className="text-lg italic opacity-80 mb-2">
-            This is how my brain works (most of the time)
+            Gemini said
           </p>
           <h2 className="text-6xl font-bold uppercase tracking-tight">
             Process
@@ -117,12 +117,11 @@ export function Process() {
             <ProcessStep direction="north">
               <div className="text-center md:text-right">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#ff4d8d] mb-4 md:ml-auto">
-                  <FileText className="w-6 h-6 text-white" />
+                  <Ear className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-2">1. BRIEFING</h3>
+                <h3 className="text-2xl font-bold mb-2">1. HEAR THE HUMAN STORY</h3>
                 <p className="opacity-80">
-                  Stakeholder hands me over the requirements. Which is the start
-                  of user stories & documentation.
+                  "I start by listening to the people, not just the problem. Whether it's de-escalating a salary dispute or consoling a nurse after a patient passes, I build the trust required to get to the truth. I identify the emotional friction before I touch the operational friction."
                 </p>
               </div>
             </ProcessStep>
@@ -131,12 +130,11 @@ export function Process() {
             <ProcessStep direction="east">
               <div className="text-center md:text-left">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#ff4d8d] mb-4 md:mr-auto">
-                  <Search className="w-6 h-6 text-white" />
+                  <Database className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-2">2. RESEARCH</h3>
+                <h3 className="text-2xl font-bold mb-2">2. INTERROGATE THE DATA</h3>
                 <p className="opacity-80">
-                  I search every crevice on Google & conduct market analysis -
-                  what are the competitors doing?
+                  "Then, I validate the feelings with facts. I switch gears to 'Financial Detective,' using Python and SQL to audit the $480M portfolio or payroll logs. I let the numbers tell me why the burnout or the revenue leak is happening."
                 </p>
               </div>
             </ProcessStep>
@@ -145,14 +143,11 @@ export function Process() {
             <ProcessStep direction="south">
               <div className="text-center md:text-right">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#ff4d8d] mb-4 md:ml-auto">
-                  <Lightbulb className="w-6 h-6 text-white" />
+                  <Wrench className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-2">
-                  3. BRAINSTORM & CREATE
-                </h3>
+                <h3 className="text-2xl font-bold mb-2">3. BUILD FOR RELIEF</h3>
                 <p className="opacity-80">
-                  Rapid prototyping, wire-framing, discussion period with the
-                  designers and developers. Repeat.
+                  "I design systems that reduce cognitive load. I don't just 'optimize workflows'; I build automated tools that give nurses time back to breathe. If a process adds stress rather than removing it, it's not a solution—it's just more paperwork."
                 </p>
               </div>
             </ProcessStep>
@@ -161,12 +156,11 @@ export function Process() {
             <ProcessStep direction="west">
               <div className="text-center md:text-left">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#ff4d8d] mb-4 md:mr-auto">
-                  <Rocket className="w-6 h-6 text-white" />
+                  <Users className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-2">4. LAUNCH</h3>
+                <h3 className="text-2xl font-bold mb-2">4. LEAD THROUGH CHANGE</h3>
                 <p className="opacity-80">
-                  Audited the build - check! Notify the stakeholder(s), update
-                  release notes, and deploy. Followed by measuring its success.
+                  "Delivery is a conversation, not an email. I manage the human impact of the change—handling the difficult compliance discussions and salary negotiations required to make the new standard stick. I ensure the team feels supported, not just 'managed,' through the transition."
                 </p>
               </div>
             </ProcessStep>

@@ -34,12 +34,15 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Content (Image) — add your photo as public/my_photo.jpg */}
+          {/* Right Content (Video) */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 z-20">
-              <img
-                src="/my_photo.jpg"
-                alt="Kevin Moye"
+              <video
+                src="/assets/hero_video.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-full object-cover shadow-2xl"
               />
             </div>
