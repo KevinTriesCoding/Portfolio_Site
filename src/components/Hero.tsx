@@ -3,8 +3,8 @@ import { Play, Pause, Volume2, VolumeX } from 'lucide-react'
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [isPlaying, setIsPlaying] = useState(true)
-  const [isMuted, setIsMuted] = useState(true)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [isMuted, setIsMuted] = useState(false)
 
   const togglePlay = () => {
     if (!videoRef.current) return
@@ -27,9 +27,7 @@ export function Hero() {
       <video
         ref={videoRef}
         src="/assets/hero_video.mp4"
-        autoPlay
         loop
-        muted
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       />
