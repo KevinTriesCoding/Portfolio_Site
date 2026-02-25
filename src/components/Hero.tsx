@@ -23,13 +23,13 @@ export function Hero() {
   }
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-screen overflow-hidden bg-black">
       <video
         ref={videoRef}
         src="/assets/hero_video.mp4"
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-contain md:object-cover"
       />
 
       <div className="absolute inset-0 bg-black/30" />
