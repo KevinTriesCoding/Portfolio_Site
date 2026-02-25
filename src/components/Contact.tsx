@@ -1,5 +1,5 @@
 import React from 'react'
-import { Linkedin } from 'lucide-react'
+import { Linkedin, Github } from 'lucide-react'
 import { Button } from './ui/Button'
 export function Contact() {
   return (
@@ -137,6 +137,14 @@ export function Contact() {
                 className="bg-[#0077b5] text-white p-2 rounded-sm hover:opacity-90 transition-opacity"
               >
                 <Linkedin size={20} />
+              </a>
+              <a
+                href="https://github.com/KevinTriesCoding"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#333] text-white p-2 rounded-sm hover:opacity-90 transition-opacity"
+              >
+                <Github size={20} />
               </a>
             </div>
           </div>

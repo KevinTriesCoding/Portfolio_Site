@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Linkedin } from 'lucide-react'
+import { Linkedin, Github } from 'lucide-react'
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col bg-white font-sans text-gray-900">
@@ -53,6 +53,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 className="p-2 bg-[#00E5FF] text-[#001F3F] rounded hover:bg-white transition-colors"
               >
                 <Linkedin size={20} />
+              </a>
+              <a
+                href="https://github.com/KevinTriesCoding"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-[#00E5FF] text-[#001F3F] rounded hover:bg-white transition-colors"
+              >
+                <Github size={20} />
               </a>
             </div>
           </div>
